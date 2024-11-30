@@ -2,7 +2,7 @@ Parameters:
   codeBucketName:
     Description: The name of the s3 code bucket
     Type: String
-    Default: cc-code-bucket
+    Default: codebucketclouda3
   GitHubOwner:
     Type: String
     Default: khamseaffan
@@ -14,14 +14,14 @@ Parameters:
     Default: main
   GitHubOAuthToken:
     Type: String
-    Default: # GitHub OAuth Token
+    Default:  # GitHub OAuth Token
   GitHubLink: 
     Type: String
     Default: https://github.com/khamseaffan/SmartPhotoAlbum.git
   artifactbucket:
     Description: The name of the s3 code bucket
     Type: String
-    Default: cc-code-bartifactbucket
+    Default: codebucketclouda3
   elasticSearchKeyName:
     Description: The name of the s3 bucket layer key 
     Type: String
@@ -29,19 +29,19 @@ Parameters:
   lambdaFunction1KeyName:
     Description: The name of the s3 bucket Lambda Fucntionnkey 
     Type: String
-    Default: lf1.zip
+    Default: L1_A3.zip
   lambdaFunction2KeyName:
     Description: The name of the s3 bucket Lambda Fucntionnkey 
     Type: String
-    Default: lf2.zip
+    Default: L2_A3.zip
   lambdaFunction1HandlerName:
     Description: The name of the s3 bucket Lambda Fucntionnkey 
     Type: String
-    Default: lf1.lambda_handler
+    Default: L1_A3.lambda_handler
   lambdaFunction2HandlerName:
     Description: The name of the s3 bucket Lambda Fucntionnkey 
     Type: String
-    Default: lf2.lambda_handler
+    Default: L2_A3.lambda_handler
   ESHOST:
     Description: Values of ES_HOST variable
     Type: String
