@@ -113,7 +113,7 @@ uploadButton.addEventListener('click', () => {
     } else {
 
         var params = {
-            "bucket" : " index-photo-bucket", 
+            "bucket" : "index-photo-bucket", 
             "key": fileName,
             'Content-Type': "image/" + filePath.toString().split(".")[1] + ';base64',
             'x-amz-meta-customLabels' : custom_labels,
