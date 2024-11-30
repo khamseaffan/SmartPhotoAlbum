@@ -6,14 +6,14 @@ phases:
     commands:
   build:
     commands:
-      - zip -r -j deployment_package_lf1.zip "lambda/lf1.py"
-      - zip -r -j deployment_package_lf2.zip "lambda/lf2.py"
+      - zip -r -j deployment_package_L1_A3.zip "lambda/L1_A3.py"
+      - zip -r -j deployment_package_L2_A3.zip "lambda/L2_A3.py"
   post_build:
     commands:
       - echo "Updating Lambda functions"
-      - aws lambda update-function-code --function-name index-photo --zip-file fileb://deployment_package_lf1.zip
-      - aws lambda update-function-configuration --function-name index-photo  --handler lf1.lambda_handler
-      - aws lambda update-function-code --function-name search-photo --zip-file fileb://deployment_package_lf2.zip
-      - aws lambda update-function-configuration --function-name search-photo  --handler lf2.lambda_handler
+      - aws lambda update-function-code --function-name index-photo --zip-file fileb://deployment_package_L1_A3.zip
+      - aws lambda update-function-configuration --function-name index-photo  --handler L1_A3.lambda_handler
+      - aws lambda update-function-code --function-name search-photo --zip-file fileb://deployment_package_L2_A3.zip
+      - aws lambda update-function-configuration --function-name search-photo  --handler L2_A3.lambda_handler
 
       - echo "DONE!!"
