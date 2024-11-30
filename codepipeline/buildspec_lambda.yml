@@ -9,11 +9,12 @@ phases:
       - zip -r -j deployment_package_L1_A3.zip "lambda/L1_A3.py"
       - zip -r -j deployment_package_L2_A3.zip "lambda/L2_A3.py"
   post_build:
-    commands:
-      - echo "Updating Lambda functions"
-      - aws lambda update-function-code --function-name L1_A3 --zip-file fileb://deployment_package_L1_A3.zip
-      - aws lambda update-function-configuration --function-name L1_A3  --handler L1_A3.lambda_handler
-      - aws lambda update-function-code --function-name L2_A3 --zip-file fileb://deployment_package_L2_A3.zip
-      - aws lambda update-function-configuration --function-name L2_A3  --handler L2_A3.lambda_handler
-
-      - echo "DONE!!"
+  commands:
+    - echo "Updating Lambda functions"
+    - aws lambda update-function-code --function-name L1_A3 --zip-file fileb://deployment_package_L1_A3.zip
+    - aws lambda wait function-updated --function-name L1_A3
+    - aws lambda update-function-configuration --function-name L1_A3 --handler L1_A3.lambda_handler
+    - aws lambda update-function-code --function-name L2_A3 --zip-file fileb://deployment_package_L2_A3.zip
+    - aws lambda wait function-updated --function-name L2_A3
+    - aws lambda update-function-configuration --function-name L2_A3 --handler L2_A3.lambda_handler
+    - echo "DONE!!"
