@@ -2,8 +2,8 @@ version: 0.2
 phases:
   build:
     commands:
-    - echo "Deploying client to S3 Frontend Website"
-    - echo "Current directory contents:"
-    - ls -l
-    - echo "Bucket name is: $S3_FRONTEND_BUCKET"
-    - aws s3 cp ${CODEBUILD_SRC_DIR}/cloudhw3-frontend s3://$S3_FRONTEND_BUCKET/cloudhw3-frontend --recursive
+      - echo "Deploying client to S3 Frontend Website"
+      - echo "Current directory contents:"
+      - ls -l
+      - echo "Bucket name is: $S3_FRONTEND_BUCKET"
+      - aws s3 cp ${CODEBUILD_SRC_DIR}/cloudhw3-frontend s3://$S3_FRONTEND_BUCKET/cloudhw3-frontend --recursive
