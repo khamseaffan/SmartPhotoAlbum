@@ -3,4 +3,4 @@ phases:
   build:
     commands:
     - echo "Deploying client to S3 Frontend Website"
-    - aws s3 cp frontend s3://cloudhw3-frontend-bucket/frontend --recursive
+    - aws s3 cp frontend s3://cloudhw3-frontend-bucket/ --recursive
