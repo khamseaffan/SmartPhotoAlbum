@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+  build:
+    commands:
+      - zip -r -j deployment_package_lf1.zip "lambda/lf1.py"
+      - zip -r -j deployment_package_lf2.zip "lambda/lf2.py"
+  post_build:
+    commands:
+      - echo "Updating Lambda functions"
+      - aws lambda update-function-code --function-name index-photo --zip-file fileb://deployment_package_lf1.zip
+      - aws lambda update-function-configuration --function-name index-photo  --handler lf1.lambda_handler
+      - aws lambda update-function-code --function-name search-photo --zip-file fileb://deployment_package_lf2.zip
+      - aws lambda update-function-configuration --function-name search-photo  --handler lf2.lambda_handler
+
+      - echo "DONE!!"

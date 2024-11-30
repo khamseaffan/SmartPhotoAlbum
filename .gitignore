@@ -1,0 +1,6 @@
+*.pyc  # Python bytecode files
+__pycache__/
+*.swp  # Vim temporary files
+.DS_Store  # macOS-specific file
+
+cloud/
