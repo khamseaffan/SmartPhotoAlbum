@@ -11,9 +11,9 @@ phases:
   post_build:
     commands:
       - echo "Updating Lambda functions"
-      - aws lambda update-function-code --function-name index-photo --zip-file fileb://deployment_package_L1_A3.zip
-      - aws lambda update-function-configuration --function-name index-photo  --handler L1_A3.lambda_handler
-      - aws lambda update-function-code --function-name search-photo --zip-file fileb://deployment_package_L2_A3.zip
-      - aws lambda update-function-configuration --function-name search-photo  --handler L2_A3.lambda_handler
+      - aws lambda update-function-code --function-name L1_A3 --zip-file fileb://deployment_package_L1_A3.zip
+      - aws lambda update-function-configuration --function-name L1_A3  --handler L1_A3.lambda_handler
+      - aws lambda update-function-code --function-name L2_A3 --zip-file fileb://deployment_package_L2_A3.zip
+      - aws lambda update-function-configuration --function-name L2_A3  --handler L2_A3.lambda_handler
 
       - echo "DONE!!"
